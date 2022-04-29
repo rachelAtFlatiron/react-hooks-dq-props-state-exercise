@@ -1,8 +1,10 @@
+//component imports to use within this component
 import React, { useState } from "react";
 import Boss from "../assets/boss-hog.png";
 import BabyHog from "./BabyHog";
-// import offspring from "../data.js"
+import offspring from "../data";
 
+//main function in this component - returns JSX based on data we pass through
 function HogBoss() {
   const [eyeColor, setEyeColor] = useState("blue");
 
@@ -40,9 +42,9 @@ function HogBoss() {
         <img id="boss-blaster" src={Boss} alt="" />
       </div>
       <ul className="hoglist">
-        <BabyHog />
-        <BabyHog />
-        <BabyHog />
+        <BabyHog eyes={eyeColor} data={offspring[0]}/>
+        <BabyHog eyes={eyeColor} data={offspring[1]}/>
+        <BabyHog eyes={eyeColor} data={offspring[2]} />
       </ul>
     </div>
   );
