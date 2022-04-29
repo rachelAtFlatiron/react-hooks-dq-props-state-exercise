@@ -10,7 +10,7 @@ import normalBaby from "../assets/unadulterated-hoglette.png";
 
 function HogBoss() {
   const [eyeColor, setEyeColor] = useState("blue");
-  const [image, setImage] = useState('')
+ 
 
   const diplayData = data.map((pig) => {
     return <BabyHog key = {pig.name} eyeColor={eyeColor} name={pig.name} hobby={pig.hobby} />
