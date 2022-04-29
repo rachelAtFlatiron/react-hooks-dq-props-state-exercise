@@ -1,32 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import normalBaby from "../assets/unadulterated-hoglette.png";
 import SunBaby from "../assets/sun-eyes.png";
 import BlueBaby from "../assets/blue-eyes.png";
 import GlowingBaby from "../assets/glowing-eyes.png";
 
-// is there a way we could associate eye color string values with images?
-// perhaps so we could do something along the lines of `eyeColorMapper['blue'] and get back the right image?`
+function BabyHog({eyeColor, hog}) {
 
-function BabyHog(props) {
-  function handleChangeWeight(e) {
-    // how can we reuse this for both buttons?
-    // perhaps something with e.target.name === "+"
+  const [weight, changeWeight] = useState(200);
+  //checks which button was clicked based on the names value. then adds or subtracts based on that value.
+  const handleChangeWeight = (e) => e.target.name === '+' ? changeWeight((prev) => prev + 10) : changeWeight((prev) => prev - 10)
+
+  // renders image based on comparing eyeColor's value 
+  const image = () => {
+    switch(eyeColor){
+      case 'sun':
+        return SunBaby;
+      case 'blue':
+        return BlueBaby;
+      case 'glowing':
+        return GlowingBaby;
+      default:
+        return normalBaby
+    }
   }
 
   return (
     <li className="hogbabies">
-      <h1>Name</h1>
-      <h3>Weight:</h3>
-      <h3>Hobby:</h3>
-      <h4>Eye Color:</h4>
-
-      <button name="+">Increase Weight</button>
-      <button name="-">Decrease Weight</button>
-
+      <h1>Name: {hog.name}</h1>
+      <h3>Weight: {weight}</h3>
+      <h3>Hobby: {hog.hobby}:</h3>
+      <h4>Eye Color: {eyeColor}</h4>
+      {/*adds an onClick event listener to the buttons*/}
+      <button name="+" onClick={handleChangeWeight}>Increase Weight</button>
+      <button name="-" onClick={handleChangeWeight}>Decrease Weight</button>
+      {/* dynamically changes weight based on the weight variable */}
       <div className="hb-wrap">
         <img
-          src={normalBaby}
-          style={{ height: "200px" }}
+          src={image()}
+          style={{ height: `${weight}px` }}
           alt="MasterBlasterJrJr"
         />
       </div>
