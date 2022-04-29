@@ -43,14 +43,11 @@ function HogBoss() {
         {offspring.map((el) => (
           <BabyHog
             key={el.id}
-            // id={el.id}
             name={el.name}
             hobby={el.hobby}
             eyeColor={eyeColor}
           />
         ))}
-        {/* <BabyHog />
-        <BabyHog /> */}
       </ul>
     </div>
   );
