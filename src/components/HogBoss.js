@@ -1,13 +1,25 @@
 import React, { useState } from "react";
 import Boss from "../assets/boss-hog.png";
 import BabyHog from "./BabyHog";
+import data from "../data"
+import SunBaby from "../assets/sun-eyes.png";
+import BlueBaby from "../assets/blue-eyes.png";
+import GlowingBaby from "../assets/glowing-eyes.png";
+import normalBaby from "../assets/unadulterated-hoglette.png";
 // import offspring from "../data.js"
 
 function HogBoss() {
   const [eyeColor, setEyeColor] = useState("blue");
+  const [image, setImage] = useState('')
+
+  const diplayData = data.map((pig) => {
+    return <BabyHog key = {pig.name} eyeColor={eyeColor} name={pig.name} hobby={pig.hobby} />
+  })
 
   function handleChangeEyeColor(e) {
+
     setEyeColor(e.target.value);
+    //we want to change the image when you change the color
   }
 
   return (
@@ -40,9 +52,7 @@ function HogBoss() {
         <img id="boss-blaster" src={Boss} alt="" />
       </div>
       <ul className="hoglist">
-        <BabyHog />
-        <BabyHog />
-        <BabyHog />
+        {diplayData}
       </ul>
     </div>
   );
