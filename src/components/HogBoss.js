@@ -8,6 +8,9 @@ import offspring from "../data";
 function HogBoss() {
   const [eyeColor, setEyeColor] = useState("blue");
 
+  {
+    // this function checks the eye color box that is selected and updates various eyes
+  }
   function handleChangeEyeColor(e) {
     setEyeColor(e.target.value);
   }
@@ -42,6 +45,9 @@ function HogBoss() {
         <img id="boss-blaster" src={Boss} alt="" />
       </div>
       <ul className="hoglist">
+        {
+          // pass down the needed props to the child 'BabyHog' components 
+        }
         <BabyHog eyes={eyeColor} data={offspring[0]}/>
         <BabyHog eyes={eyeColor} data={offspring[1]}/>
         <BabyHog eyes={eyeColor} data={offspring[2]} />

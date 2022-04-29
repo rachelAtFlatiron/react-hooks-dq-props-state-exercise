@@ -18,24 +18,6 @@ function BabyHog(props) {
     // how can we reuse this for both buttons?
     // perhaps something with e.target.name === "+"
   }
-
-  function checkEyeColor() {  //here i tried different ways to update the img src 
-    let newEyes = normalBaby
-    if(SunBaby.includes(props.eyes)) {
-      newEyes = SunBaby
-    }else if (BlueBaby.includes(props.eyes)) {
-        newEyes = BlueBaby
-      }else if (GlowingBaby.includes(props.eyes)){
-        newEyes = GlowingBaby
-      }
-      return (
-        <img 
-          src={newEyes}
-          style={{ height: "200px" }}
-          alt="MasterBlasterJrJr"
-        />
-      )
-    }
     
   // use props to populate JSX
   return (
@@ -50,7 +32,7 @@ function BabyHog(props) {
 
       <div className="hb-wrap">
         
-        {// couldn't finish this part in time
+        {// This is probably way too much code to do this but it was the only way i could get it to work
 }
       {BlueBaby.includes(props.eyes) ? 
        <img 
@@ -58,13 +40,24 @@ function BabyHog(props) {
           style={{ height: "200px" }}
           alt="MasterBlasterJrJr"
         />
-        : 
+        : GlowingBaby.includes(props.eyes) ?
+        <img 
+          src={GlowingBaby}
+          style={{ height: "200px" }}
+          alt="MasterBlasterJrJr"
+        />
+        : SunBaby.includes(props.eyes) ?
+        <img 
+          src={SunBaby}
+          style={{ height: "200px" }}
+          alt="MasterBlasterJrJr"
+        />
+        :
         <img 
           src={normalBaby}
           style={{ height: "200px" }}
           alt="MasterBlasterJrJr"
         />
-
       }
       </div>
     </li>
