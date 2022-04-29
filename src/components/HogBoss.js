@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import Boss from "../assets/boss-hog.png";
 import BabyHog from "./BabyHog";
 import data from "../data"
-import SunBaby from "../assets/sun-eyes.png";
-import BlueBaby from "../assets/blue-eyes.png";
-import GlowingBaby from "../assets/glowing-eyes.png";
-import normalBaby from "../assets/unadulterated-hoglette.png";
+
 // import offspring from "../data.js"
 
 function HogBoss() {
