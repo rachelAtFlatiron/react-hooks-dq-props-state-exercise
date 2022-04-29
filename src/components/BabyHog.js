@@ -12,6 +12,7 @@ function BabyHog({eyeColor, name, hobby}) {
   //create state for weight and set inital value to 0
   let [weight, setWeight] = useState(50);
 
+
   //create function to use setter function to increase or decrease depending on which button was pressed
   function handleChangeWeight(e) {
     if(e.target.name === "+"){
@@ -24,6 +25,15 @@ function BabyHog({eyeColor, name, hobby}) {
     // how can we reuse this for both buttons?
     // perhaps something with e.target.name === "+"
   }
+  //create object and set eye colors as key and images as value
+    let obj ={
+      blue: BlueBaby,
+      sun: SunBaby,
+      glowing: GlowingBaby
+    }
+
+    
+  
 
   return (
     //this returns JSX of each hog baby with details of name, hobby, eye color with imported props from parent
@@ -42,7 +52,8 @@ function BabyHog({eyeColor, name, hobby}) {
       {/* this is where we change the height of the hog baby image by using weight state */}
       <div className="hb-wrap">
         <img
-          src={normalBaby}
+          //depending on the passed eyeColor from HogBoss, set src as obj[key]- key being the color of eyeColor
+          src={obj[eyeColor]}
           style={{ height: `${weight}px` }}
           alt="MasterBlasterJrJr"
         />
