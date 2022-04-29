@@ -5,7 +5,7 @@ import offspring from "../data.js"
 
 function HogBoss() {
   // setting eyecolor by usestate cuz it changes
-  const [eyeColor, setEyeColor] = useState("normal baby");
+  const [eyeColor, setEyeColor] = useState("normal");
   const [list, setList] = useState(offspring)
 
   // creating function that matches the color with the value from input

@@ -13,7 +13,8 @@ function BabyHog({name, hobby, eyeColor}) {
   const [weight, setWeight] = useState(200)
 
   // Make an object of eyecolor for the eyecolor
-  const eyeColorHandler= {  
+  const eyeColorHandler= {
+    normal: normalBaby,
    sun: SunBaby,
    blue: BlueBaby,
    glowing: GlowingBaby
