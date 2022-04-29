@@ -8,6 +8,10 @@ import offspring from "../data";
 function HogBoss() {
   const [eyeColor, setEyeColor] = useState("blue");
 
+  /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  *outside of your return( ) statement is regular JavaScript 
+  *so you don't need curly braces around comments
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
   {
     // this function checks the eye color box that is selected and updates various eyes
   }
@@ -46,6 +50,18 @@ function HogBoss() {
       </div>
       <ul className="hoglist">
         {
+          /*~~~~~~~~~~~~~~~~~~~
+          *good use of curly braces for comments
+          *use .map to loop through offspring and DYNAMICALLY create BabyHog's
+
+          offspring.map((baby, i) => {
+            return <BabyHog eyes={eyeColor} data={baby} key={baby.id} />
+          })
+
+          *useful in case you need to make 100 different BabyHogs
+          ~~~~~~~~~~~~~~~~~~~~~~*/
+        }
+        {  
           // pass down the needed props to the child 'BabyHog' components 
         }
         <BabyHog eyes={eyeColor} data={offspring[0]}/>
