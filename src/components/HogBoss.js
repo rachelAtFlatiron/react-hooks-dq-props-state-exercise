@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import Boss from "../assets/boss-hog.png";
 import BabyHog from "./BabyHog";
-// import offspring from "../data.js"
+import offspring from "../data.js"
 
 function HogBoss() {
-  const [eyeColor, setEyeColor] = useState("blue");
+  // setting eyecolor by usestate cuz it changes
+  const [eyeColor, setEyeColor] = useState("normal baby");
+  const [list, setList] = useState(offspring)
 
+  // creating function that matches the color with the value from input
   function handleChangeEyeColor(e) {
     setEyeColor(e.target.value);
   }
-
+  
+  
   return (
     <div>
       <input
@@ -40,9 +44,8 @@ function HogBoss() {
         <img id="boss-blaster" src={Boss} alt="" />
       </div>
       <ul className="hoglist">
-        <BabyHog />
-        <BabyHog />
-        <BabyHog />
+        {/* mapping over the data of list */}
+        {list.map((item) => <BabyHog name={item.name} hobby={item.hobby} eyeColor={eyeColor}/>)}
       </ul>
     </div>
   );
