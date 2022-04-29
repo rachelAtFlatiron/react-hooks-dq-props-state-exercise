@@ -3,6 +3,8 @@ import Boss from "../assets/boss-hog.png";
 import BabyHog from "./BabyHog";
 import offspring from "../data.js"
 
+//CAPITALIZATION ON COMPONENT NAMES ONLY
+
 function HogBoss() {
   const [eyeColor, setEyeColor] = useState("blue");
   //do we need state for list of offspring?
@@ -14,7 +16,7 @@ function HogBoss() {
 
   const babies = offspring.map((el, i) => {
     return <BabyHog 
-      key={el.id} //preferred to have key
+      key={el.id} //preferred to have key, numbers only
       name={el.name}
       hobby={el.hobby}
       eyeColor={eyeColor}
@@ -27,7 +29,7 @@ function HogBoss() {
         type="radio"
         name="eyeColor"
         value="blue"
-        checked={eyeColor==="blue"}
+        //checked={eyeColor==="blue"}
         onChange={handleChangeEyeColor}
       />
       Blue<br></br>
@@ -35,7 +37,7 @@ function HogBoss() {
         type="radio"
         name="eyeColor"
         value="sun"
-        checked={eyeColor==="sun"}
+        //checked={eyeColor==="sun"}
         onChange={handleChangeEyeColor}
       />
       Sun<br></br>
@@ -43,7 +45,7 @@ function HogBoss() {
         type="radio"
         name="eyeColor"
         value="glowing"
-        checked={eyeColor==="glowing"}
+        //checked={eyeColor==="glowing"}
         onChange={handleChangeEyeColor}
       />
       Glowing<br></br>
