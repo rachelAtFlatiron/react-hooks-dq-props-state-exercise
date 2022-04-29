@@ -5,6 +5,8 @@ import offspring from "../data.js"
 
 function HogBoss() {
   const [eyeColor, setEyeColor] = useState("blue");
+  //do we need state for list of offspring?
+
 
   function handleChangeEyeColor(e) {
     setEyeColor(e.target.value)
@@ -12,7 +14,7 @@ function HogBoss() {
 
   const babies = offspring.map((el, i) => {
     return <BabyHog 
-      key={el.id}
+      key={el.id} //preferred to have key
       name={el.name}
       hobby={el.hobby}
       eyeColor={eyeColor}
